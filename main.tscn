@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6au6wdpbufvb"]
+
+[ext_resource type="Script" uid="uid://d24x77cqnsrsn" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Material" uid="uid://ddr2q7hpt5wrn" path="res://material.tres" id="2_0xm2m"]
+
+[node name="Main" type="Camera3D"]
+script = ExtResource("1_ig7tw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource("2_0xm2m")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

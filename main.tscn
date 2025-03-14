@@ -1,15 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6au6wdpbufvb"]
+[gd_scene load_steps=6 format=3 uid="uid://b6au6wdpbufvb"]
 
-[ext_resource type="Script" uid="uid://d24x77cqnsrsn" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Material" uid="uid://ddr2q7hpt5wrn" path="res://material.tres" id="2_0xm2m"]
 
-[node name="Main" type="Camera3D"]
-script = ExtResource("1_ig7tw")
-
-[node name="ColorRect" type="ColorRect" parent="."]
+[sub_resource type="SphereMesh" id="SphereMesh_0xm2m"]
 material = ExtResource("2_0xm2m")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+
+[sub_resource type="Shader" id="Shader_ig7tw"]
+code = "shader_type spatial;
+render_mode unshaded;
+
+varying vec3 normal;
+
+void vertex() {
+	normal = NORMAL;
+}
+
+void fragment() {
+	// Called for every pixel the material is visible on.
+	ALBEDO = normal;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xm2m"]
+render_priority = 0
+shader = SubResource("Shader_ig7tw")
+
+[sub_resource type="SphereMesh" id="SphereMesh_h2yge"]
+material = SubResource("ShaderMaterial_0xm2m")
+flip_faces = true
+
+[node name="Main" type="Node"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_0xm2m")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("SphereMesh_h2yge")

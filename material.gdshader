@@ -1,5 +1,13 @@
-shader_type canvas_item;
+shader_type spatial;
+render_mode unshaded, world_vertex_coords;
+
+varying vec3 normal;
+
+void vertex() {
+	normal = NORMAL;
+}
 
 void fragment() {
-	COLOR = vec4(0.0, 0.0, 0.0, 1.0);
+	vec3 reflection = reflect(VIEW, NORMAL);
+	ALBEDO = (INV_VIEW_MATRIX * vec4(reflection, 0.0)).xyz;
 }

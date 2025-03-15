@@ -1,39 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6au6wdpbufvb"]
+[gd_scene load_steps=5 format=3 uid="uid://b6au6wdpbufvb"]
 
 [ext_resource type="Material" uid="uid://ddr2q7hpt5wrn" path="res://material.tres" id="2_0xm2m"]
+[ext_resource type="Sky" uid="uid://cqg0c8lubgc1d" path="res://sky.tres" id="2_h2yge"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_0xm2m"]
 material = ExtResource("2_0xm2m")
 
-[sub_resource type="Shader" id="Shader_ig7tw"]
-code = "shader_type spatial;
-render_mode unshaded;
-
-varying vec3 normal;
-
-void vertex() {
-	normal = NORMAL;
-}
-
-void fragment() {
-	// Called for every pixel the material is visible on.
-	ALBEDO = normal;
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xm2m"]
-render_priority = 0
-shader = SubResource("Shader_ig7tw")
-
-[sub_resource type="SphereMesh" id="SphereMesh_h2yge"]
-material = SubResource("ShaderMaterial_0xm2m")
-flip_faces = true
+[sub_resource type="Environment" id="Environment_1bvp3"]
+background_mode = 2
+sky = ExtResource("2_h2yge")
 
 [node name="Main" type="Node"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_0xm2m")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
-mesh = SubResource("SphereMesh_h2yge")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1bvp3")

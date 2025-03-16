@@ -1,15 +1,9 @@
 [gd_resource type="Sky" load_steps=3 format=3 uid="uid://cqg0c8lubgc1d"]
 
-[sub_resource type="Shader" id="Shader_y13mo"]
-code = "shader_type sky;
-
-void sky() {
-	COLOR = -EYEDIR;
-}
-"
+[ext_resource type="Shader" uid="uid://c35uhlch5rhaq" path="res://sky.gdshader" id="1_o311g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o311g"]
-shader = SubResource("Shader_y13mo")
+shader = ExtResource("1_o311g")
 
 [resource]
 sky_material = SubResource("ShaderMaterial_o311g")

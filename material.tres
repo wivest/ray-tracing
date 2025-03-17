@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ddr2q7hpt5wrn"]
 
 [ext_resource type="Shader" uid="uid://ophr1yh3ktc4" path="res://material.gdshader" id="1_rqskn"]
-[ext_resource type="CompressedCubemap" uid="uid://xlf2nfidncbn" path="res://cubemap.tres" id="2_1jeh6"]
+[ext_resource type="PlaceholderCubemap" uid="uid://mpcesdjgx8h6" path="res://cubemap.tres" id="2_1jeh6"]
 
 [resource]
 render_priority = 0

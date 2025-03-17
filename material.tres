@@ -3,4 +3,5 @@
 [ext_resource type="Shader" uid="uid://ophr1yh3ktc4" path="res://material.gdshader" id="1_rqskn"]
 
 [resource]
+render_priority = 0
 shader = ExtResource("1_rqskn")

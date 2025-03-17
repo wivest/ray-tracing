@@ -3,15 +3,11 @@
 importer="cubemap_texture"
 type="CompressedCubemap"
 uid="uid://xlf2nfidncbn"
-path="res://.godot/imported/panorama_image.png-dc754b58f8837ad6d82485f39c8f4d1c.ccube"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
-source_file="res://panorama_image.png"
-dest_files=["res://.godot/imported/panorama_image.png-dc754b58f8837ad6d82485f39c8f4d1c.ccube"]
+source_file="res://cubemap.tres"
 
 [params]
 
@@ -22,4 +18,4 @@ compress/hdr_compression=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-slices/arrangement=2
+slices/arrangement=0
